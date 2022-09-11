@@ -1,4 +1,5 @@
-
+//Code to run the game War through 26 cards for each of 2 players.  
+//Each win gives the player one point and any tie is zero points.
 
 const SUITS = ["♠", "♥", "♣", "♦"]
 const VALUES = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
@@ -17,6 +18,8 @@ const CARD_VALUE_MAP = {
     "Q": 12,
     "K": 13
 }
+
+//Create classes to run the game.
 
 class Deck {
     constructor() {
@@ -70,6 +73,8 @@ class Hand {
     }
 }
 
+//Function to start with a new deck
+
 function newDeck() {
     return SUITS.flatMap(suit => {
         return VALUES.map(value => {
@@ -79,6 +84,9 @@ function newDeck() {
 }
 
 let score = 0
+
+//Loop to iterate through the cards to determine which player wins each hand
+//and add the one point for each win.
 
 while(Hand > 0) {
     for(let i = 0; i < player.playerCards.length; i++) {
@@ -98,3 +106,4 @@ function gameOver(deck) {
     return deck.numberOfCards === 0
 }
 
+//Could not get my game to console.log the wins and points.
